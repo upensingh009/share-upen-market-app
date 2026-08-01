@@ -36,6 +36,10 @@ android {
     }
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -52,5 +56,5 @@ dependencies {
     // WorkManager for background polling
     implementation("androidx.work:work-runtime-ktx:2.8.1")
     // Charting library for Nifty/Sensex UI
-    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+    implementation("com.github.PhilJay:MPAndroidChart:3.1.0")
 }
