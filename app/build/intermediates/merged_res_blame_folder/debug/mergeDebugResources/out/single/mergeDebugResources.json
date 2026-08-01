@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "com.example.shareupenmarket.app-debug-34:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.example.shareupenmarket.app-main-36:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/codespace/.gradle/daemon/9.4.0/com.example.shareupenmarket.app-debug-34:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/home/codespace/.gradle/daemon/9.4.0/com.example.shareupenmarket.app-main-36:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.shareupenmarket.app-debug-34:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.shareupenmarket.app-main-36:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.shareupenmarket.app-debug-34:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.example.shareupenmarket.app-main-36:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/codespace/.gradle/daemon/9.4.0/com.example.shareupenmarket.app-debug-34:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/codespace/.gradle/daemon/9.4.0/com.example.shareupenmarket.app-main-36:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.shareupenmarket.app-debug-34:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.shareupenmarket.app-main-36:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.shareupenmarket.app-debug-34:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.example.shareupenmarket.app-main-36:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.example.shareupenmarket.app-debug-34:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.shareupenmarket.app-main-36:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.shareupenmarket.app-debug-34:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.shareupenmarket.app-main-36:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.shareupenmarket.app-debug-34:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.example.shareupenmarket.app-main-36:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/codespace/.gradle/daemon/9.4.0/com.example.shareupenmarket.app-debug-34:/layout_activity_main.xml.flat",
+        "source": "/home/codespace/.gradle/daemon/9.4.0/com.example.shareupenmarket.app-main-36:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.shareupenmarket.app-debug-34:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.shareupenmarket.app-main-36:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.shareupenmarket.app-debug-34:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.example.shareupenmarket.app-main-36:/mipmap-mdpi/ic_launcher.png"
+    }
+]
