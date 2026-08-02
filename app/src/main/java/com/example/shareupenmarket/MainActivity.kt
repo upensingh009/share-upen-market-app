@@ -8,10 +8,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import com.example.shareupenmarket.auth.AngleOneAuthManager
 import com.example.shareupenmarket.auth.LocalCredentialStore
 import com.example.shareupenmarket.databinding.ActivityMainBinding
 import com.example.shareupenmarket.market.MarketDataService
+import com.example.shareupenmarket.market.MarketWorker
 import com.example.shareupenmarket.notifications.TradeNotifier
 import com.example.shareupenmarket.suggestion.SignalService
 import com.example.shareupenmarket.trading.TradingEngine
@@ -42,6 +45,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.statusText.text = "Initializing local trading flow..."
         maybeRequestNotificationPermission()
+
+        binding.btnRunWorker.setOnClickListener {
+            val req = OneTimeWorkRequestBuilder<MarketWorker>().build()
+            WorkManager.getInstance(applicationContext).enqueue(req)
+        }
 
         refreshJob = lifecycleScope.launch {
             while (isActive) {
@@ -86,7 +94,7 @@ class MainActivity : AppCompatActivity() {
                     val stopLossText = decision.stopLoss?.let { "Stop-Loss: ₹${String.format(Locale.US, "%.2f", it)}" } ?: "Stop-Loss: --"
                     val riskText = "Risk Score: ${decision.riskScore}/100"
                     val tradeText = if (decision.shouldTrade) "Trade Allowed: yes" else "Trade Allowed: no"
-                    binding.statusText.text = "Auth: ${if (token != null) "ok" else "failed"}\nSignal: ${suggestion.reason}\nDecision: ${decision.action}\n${decision.message}\n$targetText\n$stopLossText\n$riskText\n$tradeText"
+                    binding.statusText.text = "Auth: ${if (token != null) "ok" else "failed"}\nSignal: ${suggestion.reason}\nDecision: ${decision.action}\n${decision.message}\n$targetText\n$stopLo[...]"
                 }
 
                 val action = decision.action.uppercase()
@@ -97,7 +105,7 @@ class MainActivity : AppCompatActivity() {
                 if (shouldAlert) {
                     notifier.showAlert(
                         title = "Trade Signal $action",
-                        body = "${decision.message}\nTarget: ${decision.target?.let { "₹${String.format(Locale.US, "%.2f", it)}" } ?: "--"}\nStop-Loss: ${decision.stopLoss?.let { "₹${String.format(Locale.US, "%.2f", it)}" } ?: "--"}\nRisk Score: ${decision.riskScore}/100",
+                        body = "${decision.message}\nTarget: ${decision.target?.let { "₹${String.format(Locale.US, "%.2f", it)}" } ?: "--"}\nStop-Loss: ${decision.stopLoss?.let { "₹${String.f[...] }}"
                     )
                     lastAlertAction = action
                     lastAlertTime = now
