@@ -19,7 +19,7 @@ class MarketWorker(appContext: Context, params: WorkerParameters) : CoroutineWor
             val suggestion = signalService.getSuggestion(price)
             val decision = tradingEngine.evaluate(price, suggestion)
 
-            if (isWithinMarketHours()) {
+            if (MarketHours.isWithinMarketHours()) {
                 if (decision.shouldTrade && (decision.action == "BUY" || decision.action == "SELL")) {
                     notifier.showAlert("Trade Signal ${decision.action}", decision.message)
                 }
@@ -28,11 +28,5 @@ class MarketWorker(appContext: Context, params: WorkerParameters) : CoroutineWor
         } catch (e: Exception) {
             Result.retry()
         }
-    }
-
-    private fun isWithinMarketHours(): Boolean {
-        // TODO: Implement proper Asia/Kolkata timezone-aware check here.
-        // Example market window: 09:15 - 15:30 IST
-        return true
     }
 }
